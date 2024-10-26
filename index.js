@@ -346,4 +346,45 @@
 // console.log(myMap.keys());
 // console.log(myMap)
 
+// function getSum(a, b) {
+//     const result = a + b
+//     return result
+// }
+//
+// const str = `Сумма двух чисел ${getSum(1, 2)}`
+// console.log(str)
 
+// Задание 2.
+//
+// Написать функцию, которая принимает на входе любое число (но не больше 1 000), определяет,
+// является ли оно простым, и выводит простое число или нет. Если введено больше 1 000,
+// то выводится сообщение, что данные неверны. Обратите внимание на числа 0 и 1.
+//
+// Здесь вам пригодятся знания из предыдущего модуля — циклы и условные операторы.
+//
+// Удачи!
+
+function isPrimeNumber(num) {
+  if (num <=1000){
+    let result = true;
+    if (num <=1) {
+      result = false;
+    }
+    for (let i = 2; i*i<=num; i++){
+      if (num % i === 0) {
+        result = false;
+        break;
+      }
+    }
+    if (result) {
+      console.log('Это число простое')
+    } else {
+      console.log('Это число не простое')
+    }
+  } else {
+    console.log('Введите число менее или равное 1000')
+  }
+}
+
+
+isPrimeNumber(0)
