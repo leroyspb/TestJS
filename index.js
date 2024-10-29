@@ -364,27 +364,185 @@
 //
 // Удачи!
 
-function isPrimeNumber(num) {
-  if (num <=1000){
-    let result = true;
-    if (num <=1) {
-      result = false;
-    }
-    for (let i = 2; i*i<=num; i++){
-      if (num % i === 0) {
-        result = false;
-        break;
-      }
-    }
-    if (result) {
-      console.log('Это число простое')
-    } else {
-      console.log('Это число не простое')
-    }
-  } else {
-    console.log('Введите число менее или равное 1000')
-  }
+// function isPrimeNumber(num) {
+//   if (num <=1000){
+//     let result = true;
+//     if (num <=1) {
+//       result = false;
+//     }
+//     for (let i = 2; i*i<=num; i++){
+//       if (num % i === 0) {
+//         result = false;
+//         break;
+//       }
+//     }
+//     if (result) {
+//       console.log('Это число простое')
+//     } else {
+//       console.log('Это число не простое')
+//     }
+//   } else {
+//     console.log('Введите число менее или равное 1000')
+//   }
+// }
+//
+//
+// isPrimeNumber(0)
+
+// function example(func){
+//     func();
+//     return function(){
+//         console.log('internal function')
+//     }
+// }
+//
+// function argFunc(){
+//     console.log('function from arguments')
+// }
+//
+// const resultFunc = example(argFunc);
+//
+// resultFunc();
+
+
+
+
+
+// ПРИМЕР ВЫПОЛНЕНИЯ ВЛОЖЕННОЙ ФУНКЦИИ
+// function example(func){
+//   // вызываем функцию, которую приняли как аргумент
+//   func();
+//  // возвращаем функцию
+//   return function(){
+//     console.log('internal function')
+//   }
+// }
+// // функция, которую будем передавать как аргумент в функцию example
+// function argFunc(){
+//   console.log('function from arguments')
+// }
+// // в переменную resultFunc записываем результат выполнения функции example
+// // функция, которая передаётся как аргумент, должна быть без круглых скобок
+// const resultFunc = example(argFunc);
+// // после вызова example() внутри неё будет вызвана функция argFunc, которую мы передали как аргумент, и в консоли будет текст: function from arguments
+// // вызываем функцию
+// resultFunc(); // 'internal function
+
+
+
+
+// Задание 3.
+//
+// Написать функцию, которая принимает число как аргумент и возвращает функцию,
+// которая также принимает число как аргумент и возвращает сумму этих двух чисел.
+// Выведите в консоль результат.
+//
+// Удачи!
+//
+// function smthFunc(num1) {
+//     return function getSumFunction(num2) {
+//         return num1 + num2
+//     }
+// }
+//
+// const resultFunction = smthFunc(5)
+// console.log(resultFunction(3)) //8
+// console.log (smthFunc(8)(10)) //18
+//
+// function copyArrayAndSquareNums(arr) {
+//     const output = [];
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         output.push(arr[i] ** 2)
+//     }
+//     return output;
+// }
+//
+// function copyArrayAndDivideByTwo(arr) {
+//     const output = [];
+//     for (let i = 0; i < arr.length; i++) {
+//     output.push(arr[i] / 2)
+//     }
+//     return output;
+// }
+//
+// function copyArrayAndDoSmth(arr, instructions) {
+//     const output = [];
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         output.push(instructions(arr[i]));
+//     }
+//     return output;
+// }
+//
+// function numSquared(num) {
+//     return num * num;
+// }
+//
+// function divideBy2(num) {
+//     return num / 2;
+// }
+// const result1 = copyArrayAndDoSmth([1, 2, 3], numSquared)
+// const result = copyArrayAndDoSmth([1,2,3], numSquared);
+
+
+
+// const a  = 1;
+//
+// function foo() {
+//     console.log(a)
+// }
+//
+// foo();
+
+// function foo() {
+//     console.log(1)
+// }
+//
+//
+// (function(){
+//     console.log(1)
+// })();
+//
+// (function(){
+//     console.log(2)
+// }());
+//
+//
+// const arr= [1, 2, 3]
+//
+// arr.forEach(function(item){
+//     console.log(item + 1.5)
+// })
+//
+
+
+// clearTimeout(timeoutId)
+
+// setTimeout(function (){
+//     clearInterval(intervalid)
+// }, 5100)
+// // setInterval(sum, 1000, 2, 3)
+
+
+
+
+// Задание 4.
+//
+// Напишите функцию, которая принимает два числа. Каждую секунду необходимо выводить в консоль, начиная от первого и
+// заканчивая вторым. Используйте setInterval.
+//
+// Например, пользователь ввёл числа 5 и 15. Каждую секунду в консоль должно печататься число, начиная с 5 и
+// заканчивая 15 (всего 11 чисел: 5 6 7 8 9 10 11 12 13 14 15).
+//
+// Удачи!
+
+
+const getNums = function (a, b) {
+    let i = setInterval(function (){
+    console.log(a++);
+    if (a > b) clearInterval(i);
+    }, 1000)
 }
 
-
-isPrimeNumber(0)
+getNums(5,15)
