@@ -537,12 +537,30 @@
 //
 // Удачи!
 
+//
+// const getNums = function (a, b) {
+//     let i = setInterval(function (){
+//     console.log(a++);
+//     if (a > b) {
+//         clearInterval(i);
+//     }}, 1000)
+//    }
+//
+// getNums(5,15)
 
-const getNums = function (a, b) {
-    let i = setInterval(function (){
-    console.log(a++);
-    if (a > b) clearInterval(i);
-    }, 1000)
+
+//
+// let i = 1
+// setInterval(function print() {
+//   console.log(i)
+//   i++
+// }, 1000,5,15)
+
+
+
+
+
+
+const arrow = () => {
+    console.log()
 }
-
-getNums(5,15)
